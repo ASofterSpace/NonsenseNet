@@ -9,8 +9,24 @@ import com.asofterspace.nonsenseNet.Combinator;
 
 public class TakeNth extends Combinator {
 
-	public TakeNth() {
+	private int numberToTake = 0;
 
+
+	public TakeNth(int which) {
+		this.numberToTake = which;
+	}
+
+	public Object gatherInputFrom(List<Node> inputs) {
+
+		if (inputs.size() < 1) {
+			return null;
+		}
+
+		if (numberToTake >= inputs.size()) {
+			return null;
+		}
+
+		return inputs.get(numberToTake).getValue();
 	}
 
 }

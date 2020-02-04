@@ -8,6 +8,10 @@ public abstract class NodeAction {
 
 	public int getAsInt(Object input) {
 
+		if (input == null) {
+			return 0;
+		}
+
 		if (input instanceof Integer) {
 			return (int) (Integer) input;
 		}
@@ -18,6 +22,10 @@ public abstract class NodeAction {
 	}
 
 	public String getAsStr(Object input) {
+
+		if (input == null) {
+			return "";
+		}
 
 		return input.toString();
 	}

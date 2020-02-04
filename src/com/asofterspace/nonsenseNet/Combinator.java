@@ -9,5 +9,5 @@ import java.util.List;
 
 public abstract class Combinator extends NodeAction {
 
-	public Object gatherInputFrom(List<Object> inputs);
+	public Object gatherInputFrom(List<Node> inputs);
 }

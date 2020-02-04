@@ -4,11 +4,7 @@
  */
 package com.asofterspace.nonsenseNet;
 
-public abstract class Operation {
-
-	public Operation() {
-
-	}
+public class ReturnToAll extends Splitter {
 
 	public abstract Object applyTo(Object input);
 

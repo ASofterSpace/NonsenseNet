@@ -13,6 +13,7 @@ public class Main {
 	public final static String VERSION_NUMBER = "0.0.0.1(" + Utils.TOOLBOX_VERSION_NUMBER + ")";
 	public final static String VERSION_DATE = "3. February 2020";
 
+
 	public static void main(String[] args) {
 
 		// let the Utils know in what program it is being used
@@ -31,6 +32,9 @@ public class Main {
 				return;
 			}
 		}
+
+		NodeCtrl nodeCtrl = new NodeCtrl();
+		nodeCtrl.run();
 
 		System.out.println("Nonsense Net finished. Have a nice day! :)");
 	}

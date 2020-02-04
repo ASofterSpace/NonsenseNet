@@ -20,6 +20,10 @@ public class Node {
 
 	private Splitter splitter;
 
+	private List<Object> outputValues;
+
+	private int currentlyAccessedOutVal;
+
 
 	public Node() {
 
@@ -28,6 +32,10 @@ public class Node {
 		this.outputs = new ArrayList<>();
 
 		this.operations = new ArrayList<>();
+
+		this.outputValues = new ArrayList<>();
+
+		currentlyAccessedOutVal = 0;
 	}
 
 	public void addInput(Node inNode) {
@@ -46,9 +54,22 @@ public class Node {
 			curValue = operation.applyTo(curValue);
 		}
 
-		splitter.distributeOutputTo(outputs);
+		outputValues = splitter.distributeOutputTo(outputs);
+
+		currentlyAccessedOutVal = 0;
 	}
 
-	public Object getValue();
+	public Object getValue() {
+
+		Object result = outputValues.get(currentlyAccessedOutVal);
+
+		currentlyAccessedOutVal++;
+
+		if (currentlyAccessedOutVal > outputValues.size()) {
+			currentlyAccessedOutVal = 0;
+		}
+
+		return result;
+	}
 
 }
