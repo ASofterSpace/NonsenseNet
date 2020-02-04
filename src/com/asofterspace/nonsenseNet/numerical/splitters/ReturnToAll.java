@@ -9,9 +9,9 @@ import com.asofterspace.nonsenseNet.numerical.Splitter;
 
 public class ReturnToAll extends Splitter {
 
-	public Integer[] distribute(int value) {
+	public int[] distribute(int value) {
 
-		Integer[] result = new Integer[1];
+		int[] result = new int[1];
 
 		result[0] = value;
 

@@ -4,6 +4,8 @@
  */
 package com.asofterspace.nonsenseNet.numerical;
 
+import com.asofterspace.nonsenseNet.GenericCombinator;
+
 import java.util.List;
 
 

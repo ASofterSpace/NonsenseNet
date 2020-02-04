@@ -2,8 +2,11 @@
  * Unlicensed code created by A Softer Space, 2020
  * www.asofterspace.com/licenses/unlicense.txt
  */
-package com.asofterspace.nonsenseNet;
+package com.asofterspace.nonsenseNet.textual;
 
-public abstract class Splitter extends NodeAction {
+import com.asofterspace.nonsenseNet.GenericSplitter;
+
+
+public abstract class Splitter extends GenericSplitter {
 
 }

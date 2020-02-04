@@ -2,13 +2,12 @@
  * Unlicensed code created by A Softer Space, 2020
  * www.asofterspace.com/licenses/unlicense.txt
  */
-package com.asofterspace.nonsenseNet;
+package com.asofterspace.nonsenseNet.textual;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.asofterspace.nonsenseNet.GenericNode;
 
 
-public class Node {
+public class Node extends GenericNode {
 
 	private List<Node> inputs;
 
@@ -20,7 +19,7 @@ public class Node {
 
 	private Splitter splitter;
 
-	private List<Object> outputValues;
+	private String[] outputValues;
 
 	private int currentlyAccessedOutVal;
 
@@ -33,7 +32,7 @@ public class Node {
 
 		this.operations = new ArrayList<>();
 
-		this.outputValues = new ArrayList<>();
+		this.outputValues = new String[0];
 
 		currentlyAccessedOutVal = 0;
 	}
@@ -48,24 +47,24 @@ public class Node {
 
 	public void calculate() {
 
-		Object curValue = combinator.gatherInputFrom(inputs);
+		String curValue = combinator.gatherInputFrom(inputs);
 
 		for (Operation operation : operations) {
 			curValue = operation.applyTo(curValue);
 		}
 
-		outputValues = splitter.distributeOutputTo(outputs);
+		outputValues = splitter.distribute(curValue);
 
 		currentlyAccessedOutVal = 0;
 	}
 
-	public Object getValue() {
+	public String getValue() {
 
-		Object result = outputValues.get(currentlyAccessedOutVal);
+		String result = outputValues.get[currentlyAccessedOutVal];
 
 		currentlyAccessedOutVal++;
 
-		if (currentlyAccessedOutVal > outputValues.size()) {
+		if (currentlyAccessedOutVal > outputValues.length) {
 			currentlyAccessedOutVal = 0;
 		}
 

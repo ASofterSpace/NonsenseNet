@@ -2,20 +2,18 @@
  * Unlicensed code created by A Softer Space, 2020
  * www.asofterspace.com/licenses/unlicense.txt
  */
-package com.asofterspace.nonsenseNet.combinators;
+package com.asofterspace.nonsenseNet.textual.combinators;
 
-import com.asofterspace.nonsenseNet.Operation;
+import com.asofterspace.nonsenseNet.textual.Operation;
 
 
-public class StrMapLetters extends Operation {
+public class MapLetters extends Operation {
 
-	public Object applyTo(Object input) {
-
-		String value = getAsStr(input);
+	public String applyTo(String input) {
 
 		// TODO :: map individual letters to other letters
 
-		return value;
+		return input;
 	}
 
 }

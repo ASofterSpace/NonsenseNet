@@ -2,10 +2,13 @@
  * Unlicensed code created by A Softer Space, 2020
  * www.asofterspace.com/licenses/unlicense.txt
  */
-package com.asofterspace.nonsenseNet;
+package com.asofterspace.nonsenseNet.textual;
 
-public abstract class Operation extends NodeAction {
+import com.asofterspace.nonsenseNet.GenericOperation;
 
-	public abstract Object applyTo(Object input);
+
+public abstract class Operation extends GenericOperation {
+
+	public abstract String applyTo(String input);
 
 }

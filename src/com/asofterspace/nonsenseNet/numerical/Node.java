@@ -32,7 +32,7 @@ public class Node extends GenericNode {
 
 		this.operations = new ArrayList<>();
 
-		this.outputValues = new ArrayList<>();
+		this.outputValues = new int[0];
 
 		currentlyAccessedOutVal = 0;
 	}

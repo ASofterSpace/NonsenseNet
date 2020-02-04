@@ -9,12 +9,12 @@ import com.asofterspace.nonsenseNet.numerical.Splitter;
 
 public class SplitApart extends Splitter {
 
-	public Integer[] distribute(int value) {
+	public int[] distribute(int value) {
 
 		// TODO :: instead actually split the result, e.g. by outputting
 		// fixed size chunks that add up to the value
 
-		Integer[] result = new Integer[1];
+		int[] result = new int[1];
 
 		result[0] = value;
 

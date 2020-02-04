@@ -2,18 +2,16 @@
  * Unlicensed code created by A Softer Space, 2020
  * www.asofterspace.com/licenses/unlicense.txt
  */
-package com.asofterspace.nonsenseNet.combinators;
+package com.asofterspace.nonsenseNet.textual.combinators;
 
-import com.asofterspace.nonsenseNet.Operation;
+import com.asofterspace.nonsenseNet.textual.Operation;
 
 
-public class StrUpCase extends Operation {
+public class UpCase extends Operation {
 
-	public Object applyTo(Object input) {
+	public String applyTo(String input) {
 
-		String value = getAsStr(input);
-
-		return value.toUpperCase();
+		return input.toUpperCase();
 	}
 
 }
