@@ -4,6 +4,8 @@
  */
 package com.asofterspace.nonsenseNet;
 
+import com.asofterspace.nonsenseNet.textual.Node;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +14,7 @@ public class NodeCtrl {
 
 	private int NODE_AMOUNT = 100;
 
-	private List<Node> nodes;
+	private List<GenericNode> nodes;
 
 
 	public NodeCtrl() {
@@ -26,7 +28,7 @@ public class NodeCtrl {
 
 	public void run() {
 
-		for (Node node : nodes) {
+		for (GenericNode node : nodes) {
 			node.calculate();
 		}
 	}

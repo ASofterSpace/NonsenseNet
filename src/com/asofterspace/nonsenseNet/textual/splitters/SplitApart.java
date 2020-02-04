@@ -9,6 +9,7 @@ import com.asofterspace.nonsenseNet.textual.Splitter;
 
 public class SplitApart extends Splitter {
 
+	@Override
 	public String[] distribute(String value) {
 
 		return value.split("");

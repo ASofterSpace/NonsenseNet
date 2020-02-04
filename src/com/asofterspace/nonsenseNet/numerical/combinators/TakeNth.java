@@ -7,6 +7,8 @@ package com.asofterspace.nonsenseNet.numerical.combinators;
 import com.asofterspace.nonsenseNet.numerical.Combinator;
 import com.asofterspace.nonsenseNet.numerical.Node;
 
+import java.util.List;
+
 
 public class TakeNth extends Combinator {
 
@@ -17,6 +19,7 @@ public class TakeNth extends Combinator {
 		this.numberToTake = which;
 	}
 
+	@Override
 	public int gatherInputFrom(List<Node> inputs) {
 
 		if (inputs.size() < 1) {

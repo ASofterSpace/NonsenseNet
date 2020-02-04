@@ -9,6 +9,7 @@ import com.asofterspace.nonsenseNet.numerical.Operation;
 
 public class NoOp extends Operation {
 
+	@Override
 	public int applyTo(int input) {
 		return input;
 	}

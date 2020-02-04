@@ -9,6 +9,7 @@ import com.asofterspace.nonsenseNet.numerical.Splitter;
 
 public class SplitApart extends Splitter {
 
+	@Override
 	public int[] distribute(int value) {
 
 		// TODO :: instead actually split the result, e.g. by outputting

@@ -6,6 +6,9 @@ package com.asofterspace.nonsenseNet.numerical;
 
 import com.asofterspace.nonsenseNet.GenericNode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Node extends GenericNode {
 
@@ -45,6 +48,7 @@ public class Node extends GenericNode {
 		outputs.add(outNode);
 	}
 
+	@Override
 	public void calculate() {
 
 		int curValue = combinator.gatherInputFrom(inputs);
@@ -60,7 +64,7 @@ public class Node extends GenericNode {
 
 	public int getValue() {
 
-		int result = outputValues.get[currentlyAccessedOutVal];
+		int result = outputValues[currentlyAccessedOutVal];
 
 		currentlyAccessedOutVal++;
 

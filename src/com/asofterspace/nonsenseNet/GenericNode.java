@@ -7,4 +7,6 @@ package com.asofterspace.nonsenseNet;
 
 public abstract class GenericNode {
 
+	public abstract void calculate();
+
 }

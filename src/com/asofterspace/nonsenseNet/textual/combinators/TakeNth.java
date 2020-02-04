@@ -2,9 +2,12 @@
  * Unlicensed code created by A Softer Space, 2020
  * www.asofterspace.com/licenses/unlicense.txt
  */
-package com.asofterspace.nonsenseNet.combinators;
+package com.asofterspace.nonsenseNet.textual.combinators;
 
-import com.asofterspace.nonsenseNet.Combinator;
+import com.asofterspace.nonsenseNet.textual.Combinator;
+import com.asofterspace.nonsenseNet.textual.Node;
+
+import java.util.List;
 
 
 public class TakeNth extends Combinator {
@@ -16,14 +19,15 @@ public class TakeNth extends Combinator {
 		this.numberToTake = which;
 	}
 
-	public Object gatherInputFrom(List<Node> inputs) {
+	@Override
+	public String gatherInputFrom(List<Node> inputs) {
 
 		if (inputs.size() < 1) {
-			return null;
+			return "";
 		}
 
 		if (numberToTake >= inputs.size()) {
-			return null;
+			return "";
 		}
 
 		return inputs.get(numberToTake).getValue();

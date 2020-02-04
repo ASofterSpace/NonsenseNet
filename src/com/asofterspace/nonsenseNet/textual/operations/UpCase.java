@@ -9,6 +9,7 @@ import com.asofterspace.nonsenseNet.textual.Operation;
 
 public class UpCase extends Operation {
 
+	@Override
 	public String applyTo(String input) {
 
 		return input.toUpperCase();

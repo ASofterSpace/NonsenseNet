@@ -11,5 +11,5 @@ import java.util.List;
 
 public abstract class Combinator extends GenericCombinator {
 
-	public int gatherInputFrom(List<Node> inputs);
+	public abstract int gatherInputFrom(List<Node> inputs);
 }

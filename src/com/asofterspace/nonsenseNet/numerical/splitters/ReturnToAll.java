@@ -9,6 +9,7 @@ import com.asofterspace.nonsenseNet.numerical.Splitter;
 
 public class ReturnToAll extends Splitter {
 
+	@Override
 	public int[] distribute(int value) {
 
 		int[] result = new int[1];

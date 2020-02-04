@@ -9,4 +9,5 @@ import com.asofterspace.nonsenseNet.GenericSplitter;
 
 public abstract class Splitter extends GenericSplitter {
 
+	public abstract String[] distribute(String value);
 }

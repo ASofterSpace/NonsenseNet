@@ -9,6 +9,7 @@ import com.asofterspace.nonsenseNet.textual.Splitter;
 
 public class ReturnToAll extends Splitter {
 
+	@Override
 	public String[] distribute(String value) {
 
 		String[] result = new String[1];

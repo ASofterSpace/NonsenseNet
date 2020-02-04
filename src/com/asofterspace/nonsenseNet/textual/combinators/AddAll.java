@@ -5,18 +5,22 @@
 package com.asofterspace.nonsenseNet.textual.combinators;
 
 import com.asofterspace.nonsenseNet.textual.Combinator;
+import com.asofterspace.nonsenseNet.textual.Node;
+
+import java.util.List;
 
 
 public class AddAll extends Combinator {
 
+	@Override
 	public String gatherInputFrom(List<Node> inputs) {
 
 		if (inputs.size() < 1) {
-			return null;
+			return "";
 		}
 
 		StringBuilder result = new StringBuilder();
-		for (Object input : inputs) {
+		for (Node input : inputs) {
 			result.append(input.getValue());
 		}
 		return result.toString();
