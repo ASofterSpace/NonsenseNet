@@ -4,6 +4,7 @@
  */
 package com.asofterspace.nonsenseNet;
 
+import com.asofterspace.toolbox.ai.nonsenseNet.NodeCtrl;
 import com.asofterspace.toolbox.Utils;
 
 
