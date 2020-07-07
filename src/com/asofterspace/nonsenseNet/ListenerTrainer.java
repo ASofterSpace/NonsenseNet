@@ -4,6 +4,8 @@
  */
 package com.asofterspace.nonsenseNet;
 
+import com.asofterspace.toolbox.sound.WavFile;
+
 
 /**
  * Trains the listener by scoring its results for its inputs, and if the trainer

@@ -12,6 +12,7 @@ cd toolbox
 
 md configuration
 md io
+md sound
 md utils
 
 cd ..\..\..\..
@@ -20,6 +21,7 @@ copy "..\Toolbox-Java\src\com\asofterspace\toolbox\*.java" "src\com\asofterspace
 robocopy "..\Toolbox-Java\src\com\asofterspace\toolbox\ai" "src\com\asofterspace\toolbox\ai" /e
 copy "..\Toolbox-Java\src\com\asofterspace\toolbox\configuration\*.*" "src\com\asofterspace\toolbox\configuration"
 copy "..\Toolbox-Java\src\com\asofterspace\toolbox\io\*.*" "src\com\asofterspace\toolbox\io"
+copy "..\Toolbox-Java\src\com\asofterspace\toolbox\sound\*.*" "src\com\asofterspace\toolbox\sound"
 copy "..\Toolbox-Java\src\com\asofterspace\toolbox\utils\*.*" "src\com\asofterspace\toolbox\utils"
 
 rd /s /q bin

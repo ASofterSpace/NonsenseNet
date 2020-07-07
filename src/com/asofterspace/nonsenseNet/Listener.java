@@ -4,6 +4,8 @@
  */
 package com.asofterspace.nonsenseNet;
 
+import com.asofterspace.toolbox.sound.WavFile;
+
 
 /**
  * Listens to speech and transfers it into text
