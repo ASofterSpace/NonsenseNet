@@ -36,9 +36,12 @@ public class Main {
 			}
 		}
 
+		System.out.println("Loading database...");
+
+		Database database = new Database();
+
 		// let's start the ListenerTrainer
-		ListenerTrainer listenerTrainer = new ListenerTrainer();
-		listenerTrainer.setInputDir(new Directory(INPUT_DIR));
+		ListenerTrainer listenerTrainer = new ListenerTrainer(database, new Directory(INPUT_DIR));
 
 		listenerTrainer.generateExampleInput();
 
