@@ -32,3 +32,9 @@ src/com/asofterspace/toolbox
 
 # config files
 config
+
+# data (training data, input, output)
+data
+training
+input
+output

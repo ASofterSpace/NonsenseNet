@@ -4,15 +4,17 @@
  */
 package com.asofterspace.nonsenseNet;
 
-import com.asofterspace.toolbox.ai.nonsenseNet.NodeCtrl;
+import com.asofterspace.toolbox.io.Directory;
 import com.asofterspace.toolbox.Utils;
 
 
 public class Main {
 
 	public final static String PROGRAM_TITLE = "NonsenseNet";
-	public final static String VERSION_NUMBER = "0.0.0.3(" + Utils.TOOLBOX_VERSION_NUMBER + ")";
-	public final static String VERSION_DATE = "3. February 2020 - 4. July 2020";
+	public final static String VERSION_NUMBER = "0.0.0.4(" + Utils.TOOLBOX_VERSION_NUMBER + ")";
+	public final static String VERSION_DATE = "3. February 2020 - 10. July 2020";
+
+	private final static String INPUT_DIR = "input";
 
 
 	public static void main(String[] args) {
@@ -33,6 +35,15 @@ public class Main {
 				return;
 			}
 		}
+
+		// let's start the ListenerTrainer
+		ListenerTrainer listenerTrainer = new ListenerTrainer();
+		listenerTrainer.setInputDir(new Directory(INPUT_DIR));
+
+		listenerTrainer.generateExampleInput();
+
+
+
 
 		/*
 		General plan:
@@ -63,8 +74,10 @@ public class Main {
 		  enough, just magically awesomeness arises :D
 		*/
 
+		/*
 		NodeCtrl nodeCtrl = new NodeCtrl();
 		nodeCtrl.run();
+		*/
 
 		System.out.println("Nonsense Net finished. Have a nice day! :)");
 	}
