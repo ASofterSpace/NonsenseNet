@@ -65,9 +65,49 @@ public class ListenerTrainer {
 
 		// from this position onwards, expand left and right until we get a little bit of silence
 		// (let's say a quarter of a second of silence should be enough to get a sentence or even single words)
-		// TODO
-		int posStart = 0;
-		int posEnd = 0;
+		int lengthOfSilence = origWavFile.millisToChannelPos(1000 / 4);
+		int posStart = pos;
+		int posEnd = pos;
+		int silenceLevel = soundData.getMax() / 16;
+		for (; posStart >= 0; posStart--) {
+			boolean foundSilence = true;
+			for (int i = posStart; i > posStart - lengthOfSilence; i--) {
+				if (i < 0) {
+					break;
+				}
+				if (soundData.getMax(i) > silenceLevel) {
+					foundSilence = false;
+					break;
+				}
+			}
+			if (foundSilence) {
+				posStart -= lengthOfSilence / 2;
+				if (posStart < 0) {
+					posStart = 0;
+				}
+				break;
+			}
+		}
+		int len = soundData.getLength();
+		for (; posEnd < len; posEnd++) {
+			boolean foundSilence = true;
+			for (int i = posEnd; i < posEnd + lengthOfSilence; i++) {
+				if (i >= len) {
+					break;
+				}
+				if (soundData.getMax(i) > silenceLevel) {
+					foundSilence = false;
+					break;
+				}
+			}
+			if (foundSilence) {
+				posEnd += lengthOfSilence / 2;
+				if (posEnd >= len) {
+					posEnd = len - 1;
+				}
+				break;
+			}
+		}
 
 		// cut out this portion, as it is the new word that we want to extract
 		SoundData cutData = soundData.copy(posStart, posEnd);
@@ -82,8 +122,8 @@ public class ListenerTrainer {
 		database.setGeneratedTestFileAmount(amount);
 		database.save();
 		WavFile outFile = new WavFile(generatedDir, newName + ".wav");
-		outFile.setSoundData(curData);
-		TODO - get more data of the original wav file into this one?
+		outFile.copySettingsOf(origWavFile);
+		outFile.setSoundData(cutData);
 
 		// save metadata belonging to it, such as the text it actually truly represents
 		// (which has to be filled in by a human - for now it is just unknown!)
